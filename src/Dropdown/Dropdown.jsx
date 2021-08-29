@@ -1,27 +1,43 @@
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
 import "./Dropdown.sass";
 export const Dropdown = (props) => {
   const { title, options } = props;
   const handleChange = (e) => {
-    e.preventDefault();
-    const select = document.getElementById("select");
-    const arrayOptions = [...select.options];
-    const enabledOptions = arrayOptions.filter((option) => option.selected);
-
-    console.log(enabledOptions.map((enabledOption) => enabledOption.text));
+    const list = document.getElementById("list");
+    const arrayOptions = [...list.children];
+    const arrayOptionsEnabled = arrayOptions.filter(
+      (option) => option.children[0].children[0].checked
+    );
+    const enabledFilters = arrayOptionsEnabled.map(
+      (filter) => filter.children[0].textContent
+    );
+    console.log(enabledFilters);
   };
   return (
-    <div className="container">
-      <label className="label" htmlFor="filters">
-        Filter
-      </label>
-      <select className="select" id="select" onChange={handleChange} multiple>
+    <div
+      className="container"
+      onMouseLeave={() =>
+        document.getElementById("list").classList.remove("dropdownShow")
+      }
+    >
+      <h2
+        onMouseOver={() =>
+          document.getElementById("list").classList.add("dropdownShow")
+        }
+        className="title"
+      >
+        {title}
+      </h2>
+      <ul className="dropdown" id="list" onChange={handleChange} multiple>
         {options.map((option, index) => (
-          <option className="multipleOption" key={index}>
-            {option}
-          </option>
+          <li>
+            <label className="option" htmlFor={option}>
+              <input className="checkbox" id={option} type="checkbox" />
+              {option}
+            </label>
+          </li>
         ))}
-      </select>
+      </ul>
     </div>
   );
 };
