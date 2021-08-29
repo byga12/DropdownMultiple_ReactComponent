@@ -1,6 +1,6 @@
 // import React, { useState, useEffect } from "react";
-import "./Dropdown.sass";
-export const Dropdown = (props) => {
+import "./DropdownMultiple.sass";
+export const DropdownMultiple = (props) => {
   const { title, options } = props;
   const handleChange = (e) => {
     const list = document.getElementById("list");

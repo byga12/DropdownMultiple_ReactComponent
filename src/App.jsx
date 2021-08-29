@@ -1,4 +1,4 @@
-import { Dropdown } from "./Dropdown/Dropdown";
+import { DropdownMultiple } from "./DropdownMultiple/DropdownMultiple";
 
 import React from "react";
 
@@ -8,15 +8,17 @@ export const App = () => {
   };
 
   return (
-    <Dropdown
-      title="Filters"
-      options={[
-        "Free shipping",
-        "On sale",
-        "International Shipping",
-        "Summer 2020 edition",
-      ]}
-      getActiveOptions={getActiveOptions}
-    />
+    <>
+      <DropdownMultiple
+        title="Filters"
+        options={[
+          "Free shipping",
+          "On sale",
+          "International Shipping",
+          "Summer 2020 edition",
+        ]}
+        getActiveOptions={getActiveOptions}
+      />
+    </>
   );
 };

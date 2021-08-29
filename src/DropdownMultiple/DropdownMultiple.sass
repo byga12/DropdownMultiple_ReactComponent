@@ -13,16 +13,17 @@ ul, h2, body
   display: block
   padding-inline: 1.5rem
   padding-block: .5rem
-  margin-bottom: .25rem
   border: 1px solid #ccc
   font-weight: normal
 
 
 // DROPDOWN MENU
 .dropdown 
+  width: 100%
+  position: absolute
+  z-index: 100
   display: none
   border: 1px solid #ccc
-  border-radius: 7px
 .dropdownShow
   display: block
 
@@ -30,10 +31,10 @@ ul, h2, body
   margin-right: .5rem
 
 .option
+  background: white
   display: block
   padding-block: .5rem
   padding-inline: 1rem
-  border-radius: 7px
   user-select: none
 .option:hover
   background: #eee
