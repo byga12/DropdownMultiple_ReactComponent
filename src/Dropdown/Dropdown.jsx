@@ -11,7 +11,7 @@ export const Dropdown = (props) => {
     const enabledFilters = arrayOptionsEnabled.map(
       (filter) => filter.children[0].textContent
     );
-    console.log(enabledFilters);
+    props.getActiveOptions(enabledFilters);
   };
   return (
     <div
@@ -30,8 +30,8 @@ export const Dropdown = (props) => {
       </h2>
       <ul className="dropdown" id="list" onChange={handleChange} multiple>
         {options.map((option, index) => (
-          <li>
-            <label key={index} className="option" htmlFor={option}>
+          <li key={index}>
+            <label className="option" htmlFor={option}>
               <input className="checkbox" id={option} type="checkbox" />
               {option}
             </label>
