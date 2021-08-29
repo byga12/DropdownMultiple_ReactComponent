@@ -31,7 +31,7 @@ export const Dropdown = (props) => {
       <ul className="dropdown" id="list" onChange={handleChange} multiple>
         {options.map((option, index) => (
           <li>
-            <label className="option" htmlFor={option}>
+            <label key={index} className="option" htmlFor={option}>
               <input className="checkbox" id={option} type="checkbox" />
               {option}
             </label>

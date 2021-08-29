@@ -12,7 +12,6 @@ ReactDOM.render(
         "International Shipping",
         "Summer 2020 edition",
       ]}
-      isPluralOptionsEnabled={true}
     />
   </React.StrictMode>,
   document.getElementById("root")
